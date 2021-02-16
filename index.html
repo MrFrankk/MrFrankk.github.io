@@ -4,7 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
     <title>Document</title>
+    <script>
+        // coordinate del centro della pallina
+        let x = 50;
+        let y = 50;
+
+        // diametro della pallina
+        let diameter = 50;
+
+        // velocità della pallina
+        let velocitax = 5;
+        let velocitay = 5;
+
+        //Punteggio
+        let Punteggio = 0; 
+
+        //varibile per racchetta
+        let rectY=0;
+
+
+        function setup() {
+            createCanvas(600, 400);
+        }
+
+        function draw() {
+            background(220);
+
+            // pallina
+            fill(255,0,0)
+            circle(x, y, diameter);
+
+            // linea da ignorare, serve solo a visualizzare il bordo
+            line(1, 399, 599, 399);
+            line(599, 1, 599, 399);
+            line(1, 1, 599, 1);
+            line(1, 1, 1, 399);
+
+
+            /* 
+            formula che effettua il movimento della pallina
+            Il movimento è dato dalla seguente formula matematica:
+            
+            x(t) = x(t-1) + 5
+            y(t) = y(t-1) + 5
+            
+            che in informatica posso trasformare in:
+            */
+            x = x + velocitax;
+            y = y + velocitay;
+            
+
+            //rimbalzo della pallina sui bordi
+            if (y >= 380) { //bordo giù
+              velocitay = -5;
+            }
+            if(x>=580) { //bordo destro
+             velocitax =-5;
+            }
+            if (y <= 25) { //bordo su
+              velocitay = 5;
+            }
+            if(x<=25) { //bordo sinistro
+             velocitax = 5;
+            }
+
+            //racchetta
+
+            rectY=mouseY;
+
+            if(rectY<=0)
+            {
+                rectY=1;
+            }
+
+            if(rectY>=height-80)
+            {
+                rectY=height-80;
+            }
+
+            fill(0,255,0)
+            rect(5,rectY,20,80);
+
+            //punteggio ogni volta che si colpisce la racchetta
+            fill(0);
+            textSize(20);
+            text("Punteggio: " + Punteggio, 10, 25);
+
+            //rimbalzo della pallina sulla racchetta
+            if(y>=mouseY && y<=mouseY+80 && x<=50){
+                velocitax = 5;
+                Punteggio++;
+            }
+
+
+        }
+    </script>
 </head>
 <body>
     <h1>Pagina di prova</h1>
