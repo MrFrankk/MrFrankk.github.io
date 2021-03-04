@@ -4,166 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-    <title>Document</title>
-    <script>
-        // coordinate del centro della pallina
-        let x = 50;
-        let y = 50;
-
-        // diametro della pallina
-        let diameter = 50;
-
-        // velocità della pallina
-        let velocitax = 5;
-        let velocitay = 5;
-
-        //Punteggio
-        let Punteggio = 0; 
-
-        //varibile per racchetta
-        let rectY=0;
-
-
-        function setup() {
-            createCanvas(600, 400);
-        }
-
-        function draw() {
-            background(220);
-
-            // pallina
-            fill(255,0,0)
-            circle(x, y, diameter);
-
-            // linea da ignorare, serve solo a visualizzare il bordo
-            line(1, 399, 599, 399);
-            line(599, 1, 599, 399);
-            line(1, 1, 599, 1);
-            line(1, 1, 1, 399);
-
-
-            /* 
-            formula che effettua il movimento della pallina
-            Il movimento è dato dalla seguente formula matematica:
-            
-            x(t) = x(t-1) + 5
-            y(t) = y(t-1) + 5
-            
-            che in informatica posso trasformare in:
-            */
-            x = x + velocitax;
-            y = y + velocitay;
-            
-
-            //rimbalzo della pallina sui bordi
-            if (y >= 380) { //bordo giù
-              velocitay = -5;
-            }
-            if(x>=580) { //bordo destro
-             velocitax =-5;
-            }
-            if (y <= 25) { //bordo su
-              velocitay = 5;
-            }
-            if(x<=25) { //bordo sinistro
-             velocitax = 5;
-            }
-
-            //racchetta
-
-            rectY=mouseY;
-
-            if(rectY<=0)
-            {
-                rectY=1;
-            }
-
-            if(rectY>=height-80)
-            {
-                rectY=height-80;
-            }
-
-            fill(0,255,0)
-            rect(5,rectY,20,80);
-
-            //punteggio ogni volta che si colpisce la racchetta
-            fill(0);
-            textSize(20);
-            text("Punteggio: " + Punteggio, 10, 25);
-
-            //rimbalzo della pallina sulla racchetta
-            if(y>=mouseY && y<=mouseY+80 && x<=50){
-                velocitax = 5;
-                Punteggio++;
-            }
-
-
-        }
-    </script>
+    <title>Menu</title>
 </head>
 <body>
-    <h1>Gioco del Pong</h1>
+    <header>
+        <h1>Menu</h1>
+    </header>
 
-        <h2> Descrizione </h2> 
-        <p> 
-            Pong è un videogioco sportivo bidimensionale che simula in modo molto semplificato il tennistavolo. <br> 
-            Il giocatore controlla una racchetta sotto la forma di una barra bianca che può muovere verticalmente lungo un lato dello schermo. <br> 
-            È possibile giocare in singolo contro il computer o a due giocatori. <br>
-        </p>
-
-        <h2> Requisiti: </h2> 
+    <main>
         <ul>
-            <li> La pallina è realizzata attraverso un cerchio "Rosso" con le cordinate Iniziali "x=50,y=50" e il diametro "50". </li>
-            <li> l'area da disegno è "Rettangolo" "x=600,y=400". </li>
-            <li> la velocita della pallina è "x=5,y=5". </li>
-            <li> la pallina arrivata alla cordinata y>=380 inverte la velocità sull'asse Y=-5. </li>
-            <li> la pallina arrivata alla cordinata x>=580 inverte la velocità sull'asse X=-5. </li>
-            <li> la pallina arrivata alla cordinata y<=25 inverte la velocità sull'asse Y=+5. </li>
-            <li> la pallina arrivata alla cordinata x<=25 inverte la velocità sull'asse X=+5. </li>
-            <li> la racchetta  è realizzata con un "Rettangolo" di colore "Verde" Le cordinate Iniziali "x=5 y=mouseY"  "h=20 l=80". </li>
-            <li> Quando x e y sono compresi tra x della racchetta e y della racchetta inverte la velocita sull'asse delle "x". </li>
-            <li> la racchetta si deve muovere solo nell'asse "Y". </li>
-            <li> La racchetta è comandata tramite mouse. </li>
-            <li> 
-                La pallina deve rimbalzare sulla  racchetta:
-                <ul>
-                    <li>Se y>=mouseY e y<=mouseY+80 e x<=50 la velocita si inverte sull'asse X=+5. </li>
-                </ul> 
-            </li>
-            <li> Il punteggio deve essere posizionato in alto a sinistra. </li>
-            <li> 
-                Il punteggio deve aumentare di 1 ogni volta che la pallina tocca la racchetta: 
-                <ul>
-                    <li>Se y>=mouseY e y<=mouseY+80 e x<=50 bisogna aumentare il punteggio di 1. </li>
-                </ul>
-            </li>
+            <a href="squadra.html"><li> Formazione della squadra di calcio </li></a>
+            <a href="orologio.html"><li> Orologio </li></a>
+            <a href="robot.html"><li> Robot </li></a>
         </ul>
-
-        <h2> questionario con tutte le domande relative ai requisiti: </h2>
-        <ul>
-            <li> 
-                La racchetta e la pallina cambiano mai colore? 
-                <ul><li>se si, quando?</li></ul>
-            </li>
-            <li> 
-                Il backgroung cambia mai colore?
-                <ul><li>se si, quando?</li></ul> 
-            </li>
-            <li> La racchetta aumenta mai la sua dimensione? </li>
-            <li> La pallina aumenta mai la sua dimensione? </li>
-            <li> La racchetta cambierà la sua posizione nel corso del tempo? </li>
-            <li> Come deve reagire il gioco quando l'utente ruota lo schermo dello smartphone? </li>
-            <li> La modalità di gioco full-screen (a tutto schermo) è da realizzare? </li>
-            <li> L'applicazione (il gioco) deve avere un pulsante di pausa? </li>
-            <li> L'applicazione (il gioco) deve avere un menu principale? </li>
-            <li> L'applicazione (il gioco) deve avere uno shop per acquistare eventualmente nuove palline e nuove racchette? </li>
-            <li> Il gioco deve avere una musichetta di sottofondo? </li>
-            <li> La musichetta deve essere continua oppure può essere stoppata da un apposito tasto? </li>
-            <li> 
-                Il volume della misichetta può essere alzato ed abbassato? 
-                <ul><li>se si, come?</li></ul>
-            </li>
-        </ul>
+    </main>
 </body>
 </html>
