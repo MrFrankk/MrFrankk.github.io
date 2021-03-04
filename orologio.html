@@ -12,6 +12,11 @@
             canvas { display: block; }
         </style>
 
+    </head>
+    <body>
+        <h1>Esercizio su p5.js</h1>
+        <a href="index.html"><h2>torna al menu</h2></a>
+
         <script>
             function setup() {
                 createCanvas(400, 400);
@@ -31,18 +36,14 @@
                 circle(200, 200, 150);
                 
                 fill(0, 0, 255);
-                arc(200, 200, 150, 150, s, s+1);
+                arc(200, 200, 150, 150, s*6-90, s*6-89);
 
                 fill(0, 255, 0);
-                arc(200, 200, 140, 140, m, m+1);
+                arc(200, 200, 140, 140, m*6-90, m*6-89);
 
                 fill(255, 0, 0);
-                arc(200, 200, 130, 130, h, h+1);
+                arc(200, 200, 130, 130, h*30-90, h*30-89);
             }
         </script>
-    </head>
-    <body>
-        <h1>Esercizio su p5.js</h1>
-        <a href="index.html"><h2>torna al menu</h2></a>
     </body>
 <html>
