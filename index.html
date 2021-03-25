@@ -1,66 +1,162 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Sito scolastico | Home Page</title>
 
-    <!-- Stile del menu -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.6.0/dist/darkly/bootstrap.css" integrity="sha256-sI9r5OJ+Pe8S/XYC/eO2EUp8TJRGG1TMDaPkJPlyFNo=" crossorigin="anonymous">
+
     <link rel="stylesheet" href="CSS/style.css">
-
-    <!-- font title -->
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-
-    <!-- font delle liste -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-    <!-- font footer -->
-    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
-
 </head>
 <body>
-
-    <div class="contenitore">
-        
-        <!-- first-title -->
+    <div class="container">
+        <!-- NAVBAR -->
         <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="index.html">Soft Skills</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             
-            <h1 id="first-title">Menu</h1>
-        
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="squadra.html">Squadra</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="orologio.html">Orologio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="robot.html">Robot</a>
+                        </li>
+                    </ul>
+                    <!-- fine dell'unordered list -->
+                </div>
+            </nav>
+            <!-- Fine navbar -->
         </header>
-        
-        <hr>
 
         <main>
-            
-            <!-- menu con link -->
-            <section>
-                
-                <div class="menu">
-                    
-                    <ul>
-                        <li> <a href="squadra.html"> Formazione della squadra di calcio </a> </li>
-                        <li> <a href="orologio.html"> Orologio </a> </li>
-                        <li> <a href="robot.html"> Robot </a> </li>
-                        <li> <a href="soft_skills.html"> Soft Skills </a> </li>
-                    </ul>
+            <h1 class="title">Soft Skills</h1>
 
+            <!-- Nomi Soft Skills viste in lezione --> 
+            <section>
+
+                <!-- Titolo -->
+                <h2 class="title">Soft Skills viste in lezione</h2>
+                
+                <!-- Lista -->
+                <div class="first-list">
+                    <ul>
+                    
+                        <li> Problem Solving </li>
+                        <li> Capacità di Comunicazione </li>
+                        <li> Lavoro Sottopressione </li>
+                        <li> Team Work </li>
+                        <li> Leadership </li>
+                    
+                    </ul>
                 </div>
                 
             </section>
+            
+            <hr>
 
+            <!-- Spiegazione delle Soft Skills --> 
+            <section>
+
+                <!-- Titolo -->
+                <h2 class="title">Spiegazione</h2>
+            
+                <!-- Lista -->
+                <div class="second-list">
+                    <ul>
+
+                        <li> 
+                            <strong>Problem Solving: </strong>
+                            È un approccio al lavoro che, 
+                            identificandone le priorità e le criticità, 
+                            permette di individuare le possibili migliori soluzioni ai problemi. 
+                        </li>
+                        
+                        <li> 
+                            <strong>Capacità di Comunicazione: </strong>  
+                            È la capacità di trasmettere e condividere in modo chiaro e sintetico 
+                            idee ed informazioni con tutti i propri interlocutori, 
+                            di ascoltarli e di confrontarsi con loro efficacemente.
+                        </li >
+                        
+                        <li> 
+                            <strong>Lavoro Sottopressione: </strong>  
+                            È la capacità di reagire positivamente alla pressione lavorativa 
+                            mantenendo il controllo, 
+                            rimanendo focalizzati sulle priorità 
+                            e di non trasferire su altri le proprie eventuali tensioni.
+                        </li>
+                        
+                        <li> 
+                            <strong>Team Work: </strong> 
+                            È la disponibilità a lavorare e collaborare con gli altri, 
+                            avendo il desiderio di costruire relazioni positive 
+                            tese al raggiungimento del compito assegnato.
+                        </li>
+                        
+                        <li> 
+                            <strong>Leadership: </strong>
+                            È l’innata capacità di condurre, 
+                            motivare e trascinare gli altri verso mete e obiettivi ambiziosi, 
+                            creando consenso e fiducia.
+                        </li>
+
+                    </ul>
+                    
+                </div>
+
+            </section>
         </main>
 
         <hr>
 
-        <footer id="footer">
-
-            <h3>Created by Francesco caiazza</h3>
-
+        <footer>
+            <p>Questa è la home page, è possibile fare un giro nelle altre page cliccando sui nomi nella barra di navigazione</p>
         </footer>
-    
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.js" integrity="sha256-U+mDCLgTk8IMb18+fQT+ucvP73uHTPaG2qZU9o7smtE=" crossorigin="anonymous"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            $(window).scroll(function () {
+                var top = $(document).scrollTop();
+                if (top > 50) {
+                    $('#home > .navbar').removeClass('navbar-transparent');
+                } else {
+                    $('#home > .navbar').addClass('navbar-transparent');
+                }
+            })
+
+            $('a[href="#"]').click(function (event) {
+                event.preventDefault();
+            })
+
+            // $('.alert').alert()
+            // $('.carousel').carousel();
+            $('.bs-component [data-toggle="popover"]').popover();
+            $('.bs-component [data-toggle="tooltip"]').tooltip();
+            $('.bs-component [data-toggle="popover"]').popover();
+            // $('.bs-component .modal-dialog').modal();
+
+        })();
+    </script>
     
 </body>
 </html>

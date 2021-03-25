@@ -6,48 +6,133 @@
         <meta name="author" content="Francesco Caiazza">
         <meta name="description" content="Rosa del Catania">
         <title>Catania</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.6.0/dist/darkly/bootstrap.css" integrity="sha256-sI9r5OJ+Pe8S/XYC/eO2EUp8TJRGG1TMDaPkJPlyFNo=" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="CSS/squadra_style.css">
+
     </head>
     <body>
-        <a href="index.html"><h2>torna al menu</h2></a>
-        <h1>Catania</h1>
-        <div id="portieri">
-            <h2>Portieri:</h2>
-            <p>
-                <em>
-                    <mark>
-                        Miguel Ángel Martínez
-                    </mark> - Alessandro Confente - Antonio Santurro - Salvatore Della Valle
-                </em>
-            </p>
+        
+        <div class="container">
+
+            <!-- NAVBAR -->
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <a class="navbar-brand" href="squadra.html">Squadra</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="squadra.html">Squadra</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="orologio.html">Orologio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="robot.html">Robot</a>
+                            </li>
+                        </ul>
+                        <!-- fine dell'unordered list -->
+                    </div>
+                </nav>
+                <!-- Fine navbar -->
+            </header>
+
+            <main class="main">
+                <!-- titolo -->
+                <section>
+                    <h1 class="title">Catania</h1>
+                </section>
+
+                <!-- inizio della rosa -->
+
+                <!-- portieri -->
+                <section>
+                    <h2 class="title">Portieri:</h2>
+                    <p>
+                        <em>
+                            <mark>
+                                Miguel Ángel Martínez
+                            </mark> - Alessandro Confente - Antonio Santurro - Salvatore Della Valle
+                        </em>
+                    </p>
+                </section>
+
+                <!-- difenzori -->
+                <section>
+                    <h2 class="title">Difensori:</h2>
+                    <p>
+                        <mark>
+                            Tommaso Silvestri - Claiton - Tonucci
+                        </mark> - Mario Noce - Giovanni Pinto - Andrea Zanchi - Alessandro Albertini - Luca Calapai - Eros Pellegrini
+                    </p>
+                </section>
+
+                <!-- centrocampisti -->
+                <section>
+                    <h2 class="title">Centrocampisti:</h2>
+                    <p>
+                        <strong>
+                            <mark>
+                                Luis Maldonado - Giacomo Rosaia - Mariano Izco - Jacopo Dall'Oglio - Nana Welbeck
+                            </mark> - Vicente - Kevin Biondi - Agapios Vrikkis - Andrea Mazzarani - Kalifa Manneh - Antonio Piccolo - Michele Emmauss - Enrico Piovanello
+                        </strong>
+                    </p>
+                </section>
+
+                <!-- attaccanti -->
+                <section>
+                    <h2 class="title">Attaccanti:</h2>
+                    <p>
+                        <ins>
+                            <mark>
+                                Alessandro Gatto - Reginaldo
+                            </mark> - Manuel Sarao - Emanuele Pecorin
+                                
+                        </ins>
+                    </p>
+                </section>
+            </main>
+
         </div>
-        <div id="difensori">
-            <h2>Difensori:</h2>
-            <p>
-                <mark>
-                    Tommaso Silvestri - Claiton - Tonucci
-                </mark> - Mario Noce - Giovanni Pinto - Andrea Zanchi - Alessandro Albertini - Luca Calapai - Eros Pellegrini
-            </p>
-        </div>
-        <div id="centrocampisti">
-            <h2>Centrocampisti:</h2>
-            <p>
-                <strong>
-                    <mark>
-                        Luis Maldonado - Giacomo Rosaia - Mariano Izco - Jacopo Dall'Oglio - Nana Welbeck
-                    </mark> - Vicente - Kevin Biondi - Agapios Vrikkis - Andrea Mazzarani - Kalifa Manneh - Antonio Piccolo - Michele Emmauss - Enrico Piovanello
-                </strong>
-            </p>
-        </div>
-        <div id="attaccanti">
-            <h2>Attaccanti:</h2>
-            <p>
-                <ins>
-                    <mark>
-                        Alessandro Gatto - Reginaldo
-                    </mark> - Manuel Sarao - Emanuele Pecorin
-                        
-                </ins>
-            </p>
-        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.js" integrity="sha256-U+mDCLgTk8IMb18+fQT+ucvP73uHTPaG2qZU9o7smtE=" crossorigin="anonymous"></script>
+        <script>
+            (function () {
+                'use strict';
+
+                $(window).scroll(function () {
+                    var top = $(document).scrollTop();
+                    if (top > 50) {
+                        $('#home > .navbar').removeClass('navbar-transparent');
+                    } else {
+                        $('#home > .navbar').addClass('navbar-transparent');
+                    }
+                })
+
+                $('a[href="#"]').click(function (event) {
+                    event.preventDefault();
+                })
+
+                // $('.alert').alert()
+                // $('.carousel').carousel();
+                $('.bs-component [data-toggle="popover"]').popover();
+                $('.bs-component [data-toggle="tooltip"]').tooltip();
+                $('.bs-component [data-toggle="popover"]').popover();
+                // $('.bs-component .modal-dialog').modal();
+
+            })();
+        </script>
+
     </body>
 </html>
