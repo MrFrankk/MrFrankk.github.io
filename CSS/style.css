@@ -9,15 +9,11 @@
     color: lightskyblue;
 }
 
-.first-list {
-    text-align: center;
-    font-size: 20px;
-}
-
 hr {
     border: 1px solid #fff;
 }
 
-.second-list ul li {
-    padding-bottom: 10px;
+.first-list {
+    text-align: center;
+    font-size: 20px;
 }

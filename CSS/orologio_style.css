@@ -7,6 +7,6 @@
     color: lightskyblue;
 }
 
-.main {
-    text-align: center;
+hr {
+    border: 1px solid #fff;
 }
