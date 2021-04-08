@@ -3,13 +3,18 @@
     <head>
         <meta charset= "utf-8">
         <meta name="viewpart" content="width=device-width, initial-scale=1">
-        <title>Robot Caiazza</title>
+        <title>Sito scolastico | Robot</title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
         
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.6.0/dist/darkly/bootstrap.css" integrity="sha256-sI9r5OJ+Pe8S/XYC/eO2EUp8TJRGG1TMDaPkJPlyFNo=" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.6.0/dist/darkly/bootstrap.min.css" integrity="sha256-CETRC0luEnm32Z1z91BT8xqiKfIzbspZ64YCq3T63xk=" crossorigin="anonymous">
+        
 
         <link rel="stylesheet" href="CSS/robot_style.css">
+
+        <!-- script bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.js" integrity="sha256-U+mDCLgTk8IMb18+fQT+ucvP73uHTPaG2qZU9o7smtE=" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="container">
@@ -28,14 +33,14 @@
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="squadra.html">Squadra</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="orologio.html">Orologio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="robot.html">Robot</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sistemi e Reti</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="squadra.html">Squadra di calcio</a>
+                                    <a class="dropdown-item" href="orologio.html">Orologio Analogico</a>
+                                    <a class="dropdown-item" href="robot.html">Robot</a>
+                                    <a class="dropdown-item" href="softSkills.html">Soft Skills</a>
+                                </div>
                             </li>
                         </ul>
                         <!-- fine dell'unordered list -->
@@ -44,118 +49,27 @@
                 <!-- Fine navbar -->
             </header>
 
-            <main class="main">
-    
-                <!-- titolo -->
-                <section>
-                    <h1 class="title">Robot Caiazza</h1>
-                </section>
+            <div class="container text-center">
+                <main>
+                    <!-- titolo e script -->
+                    <section>
+                        <h1 class="title">Robot Caiazza</h1>
+                        <!-- script del robot -->
+                        <section>
+                            <script src="./JS/robot.js"></script>
+                        </section>
+                    </section>
+                </main>
+            </div>
 
-                <!-- script del robot -->
-                <section>
-                    <script>
-                        function setup(){
-                            createCanvas(400, 400);
-                            mouseX=200;
-                            mouseY=200;
-                        }
-            
-                        function draw(){
-                            background(220);
-            
-                            
-                            //volto del robot 
-            
-                            //faccia
-                            fill(150);
-                            square(mouseX - 25, mouseY - 20, 50);
-            
-                            //occhio sinitro 
-                            fill(0);
-                            circle(mouseX - 10, mouseY - 10, 5);
-                            
-                            //occhio destro 
-                            circle(mouseX + 10, mouseY - 10, 5);
-            
-                            //naso 
-                            fill(355, 0, 0);
-                            square(mouseX - 2, mouseY, 5);
-            
-                            //bocca del robot 
-                            fill(200);
-                            rect(mouseX -15 , mouseY + 15, 30, 5);
-            
-                            //antenna sinitra 
-                            line(mouseX - 20, mouseY - 20, mouseX - 20, mouseY - 40);
-                            fill(0);
-                            circle(mouseX - 20, mouseY - 40, 5);
-                            
-                            //antenna destra
-                            line(mouseX + 20, mouseY - 40, mouseX + 20, mouseY - 20);
-                            fill(0);
-                            circle(mouseX + 20, mouseY - 40, 5);
-            
-                            //corpo del robot
-            
-                            //busto
-                            fill(150);
-                            rect(mouseX - 29, mouseY + 30, 60, 90);
-            
-                            //braccio sinitro
-                            rect(mouseX - 79, mouseY + 50, 50, 20);
-                            
-                            //braccio destro
-                            rect(mouseX + 31, mouseY + 50, 50, 20);
-            
-                            //ruota sinistra
-                            fill(0);
-                            circle(mouseX - 30, mouseY + 120, 30, 70);
-                            //interno ruota sinitra 
-                            fill(192,192,192);
-                            circle(mouseX - 30, mouseY + 120, 15, 70);
-            
-                            //ruota destra
-                            fill(0);
-                            circle(mouseX + 30, mouseY + 120, 30, 70);
-                            //interno ruota destra
-                            fill(192,192,192);
-                            circle(mouseX + 30, mouseY + 120, 15, 70);
-                        }
-                    </script>
-                </section>
-            
-            </main>
+            <hr>
+
+            <footer>
+                <!-- CSS bottstrap -->
+                <p class="text-center">Created by Francesco Caiazza</p>
+            </footer>
             
         </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.js" integrity="sha256-U+mDCLgTk8IMb18+fQT+ucvP73uHTPaG2qZU9o7smtE=" crossorigin="anonymous"></script>
-        <script>
-            (function () {
-                'use strict';
-
-                $(window).scroll(function () {
-                    var top = $(document).scrollTop();
-                    if (top > 50) {
-                        $('#home > .navbar').removeClass('navbar-transparent');
-                    } else {
-                        $('#home > .navbar').addClass('navbar-transparent');
-                    }
-                })
-
-                $('a[href="#"]').click(function (event) {
-                    event.preventDefault();
-                })
-
-                // $('.alert').alert()
-                // $('.carousel').carousel();
-                $('.bs-component [data-toggle="popover"]').popover();
-                $('.bs-component [data-toggle="tooltip"]').tooltip();
-                $('.bs-component [data-toggle="popover"]').popover();
-                // $('.bs-component .modal-dialog').modal();
-
-            })();
-        </script>
     
     </body>
 </html>

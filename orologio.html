@@ -4,7 +4,7 @@
     
     <meta charset= "utf-8">
     <meta name="viewpart" content="width=device-width, initial-scale=1">
-    <title>Orologio</title>
+    <title>Sito scolastico | Orologio</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.6.0/dist/darkly/bootstrap.css" integrity="sha256-sI9r5OJ+Pe8S/XYC/eO2EUp8TJRGG1TMDaPkJPlyFNo=" crossorigin="anonymous">
 
@@ -12,6 +12,10 @@
     
     <!--Metadati di p5.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+
+    <!-- script bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.js" integrity="sha256-U+mDCLgTk8IMb18+fQT+ucvP73uHTPaG2qZU9o7smtE=" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -32,14 +36,14 @@
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="squadra.html">Squadra</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="orologio.html">Orologio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="robot.html">Robot</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sistemi e Reti</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="squadra.html">Squadra di calcio</a>
+                                <a class="dropdown-item" href="orologio.html">Orologio Analogico</a>
+                                <a class="dropdown-item" href="robot.html">Robot</a>
+                                <a class="dropdown-item" href="softSkills.html">Soft Skills</a>
+                            </div>
                         </li>
                     </ul>
                     <!-- fine dell'unordered list -->
@@ -48,75 +52,28 @@
             <!-- Fine navbar -->
         </header>
 
-        <main class="main">
-            <!-- titolo -->
-            <section>
-                <h1 class="title">Esercizio su p5.js</h1>
-            </section>
+        <div class="container text-center">
+            <main>
+                <!-- titolo -->
+                <section>
+                    <h1 class="title">Orologio Analogico</h1>
+                    <!-- script orologio -->
+                    <section>
+                        <script src="./JS/orologio.js"></script>
+                    </section>
+                </section>
+            </main>
+        </div>
+        
 
-            <!-- script orologio -->
-            <section>
-                <script>
-                    function setup() {
-                        createCanvas(400, 400);
-                        angleMode(DEGREES)
-                    }
-        
-                    function draw() {
-                        background(255, 255, 250);
-                        var h = new Date().getHours();
-                        var m = new Date().getMinutes();
-                        var s = new Date().getSeconds();
-                        text(h, 30, 90);
-                        text(m, 60, 90);
-                        text(s, 90, 90);
-        
-                        fill(255, 255, 255);
-                        circle(200, 200, 150);
-                        
-                        fill(0, 0, 255);
-                        arc(200, 200, 150, 150, s*6-90, s*6-89);
-        
-                        fill(0, 255, 0);
-                        arc(200, 200, 140, 140, m*6-90, m*6-89);
-        
-                        fill(255, 0, 0);
-                        arc(200, 200, 130, 130, h*30-90, h*30-89);
-                    }
-                </script>
-            </section>
-        </main>
+        <hr>
+
+        <footer>
+            <!-- CSS bootstrap -->
+            <p class="text-center">Created by Francesco Caiazza</p>
+        </footer>
 
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.js" integrity="sha256-U+mDCLgTk8IMb18+fQT+ucvP73uHTPaG2qZU9o7smtE=" crossorigin="anonymous"></script>
-    <script>
-        (function () {
-            'use strict';
-
-            $(window).scroll(function () {
-                var top = $(document).scrollTop();
-                if (top > 50) {
-                    $('#home > .navbar').removeClass('navbar-transparent');
-                } else {
-                    $('#home > .navbar').addClass('navbar-transparent');
-                }
-            })
-
-            $('a[href="#"]').click(function (event) {
-                event.preventDefault();
-            })
-
-            // $('.alert').alert()
-            // $('.carousel').carousel();
-            $('.bs-component [data-toggle="popover"]').popover();
-            $('.bs-component [data-toggle="tooltip"]').tooltip();
-            $('.bs-component [data-toggle="popover"]').popover();
-            // $('.bs-component .modal-dialog').modal();
-
-        })();
-    </script>
          
 </body>
 </html>
